@@ -18,11 +18,12 @@ RUN apk update && apk add --no-cache \
     bash \
     libmemcached-dev \
     redis \
-    && pecl install redis \
-    && docker-php-ext-enable redis
+    mysql-client
 
 # Instalacja rozszerzeń PHP
-RUN docker-php-ext-install pdo pdo_mysql
+RUN pecl install redis \
+    && docker-php-ext-enable redis \
+    && docker-php-ext-install pdo pdo_mysql
 
 # Instalacja Node.js i npm
 RUN apk --no-cache add nodejs npm
