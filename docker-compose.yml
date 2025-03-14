@@ -24,7 +24,7 @@ services:
 
     mysql:
         platform: linux/amd64
-        image: mysql:8.0.20  # MySQL zamiast MariaDB
+        image: mysql:8.0.20  
         container_name: mysql
         restart: unless-stopped
         tty: true
@@ -53,7 +53,7 @@ services:
         volumes: 
             - ./src:/var/www/app
         ports: 
-            - "9000:9000"  # Stały port PHP
+            - "9000:9000"  
         networks: 
             - laravel
         environment:

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255); // Nazwa zadania
-            $table->text('description')->nullable(); // Opis
-            $table->enum('priority', ['low', 'medium', 'high']); // Priorytet
-            $table->enum('status', ['to-do', 'in progress', 'done']); // Status
-            $table->dateTime('due_date'); // Termin wykonania
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relacja z użytkownikiem
+            $table->string('name', 255); 
+            $table->text('description')->nullable(); 
+            $table->enum('priority', ['low', 'medium', 'high']);
+            $table->enum('status', ['to-do', 'in progress', 'done']); 
+            $table->dateTime('due_date'); 
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->timestamps();
         });
     }

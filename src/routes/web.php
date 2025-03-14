@@ -12,3 +12,26 @@ Route::get('/pets/{id}/edit', [PetController::class, 'edit'])->name('pets.edit')
 Route::put('/pets/{id}', [PetController::class, 'update'])->name('pets.update'); // Aktualizacja zwierzaka
 
 Route::delete('/pets/{id}', [PetController::class, 'destroy'])->name('pets.destroy'); // Usunięcie zwierzaka
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+
+Route::group([
+    'prefix' => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => array_merge(
+        (array) config('backpack.base.web_middleware', 'web'),
+        (array) config('backpack.base.middleware_key', 'admin')
+    ),
+    'namespace' => 'App\Http\Controllers\Admin',
+], function () {
+    // Trasy Backpack
+    Route::crud('task', TaskCrudController::class);
+});
