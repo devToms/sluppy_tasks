@@ -24,7 +24,7 @@ class TaskReminder extends Mailable
     public function build()
     {
         return $this->subject('Task Reminder')
-                    ->view('emails.task-reminder');  // Twój widok e-maila
+                    ->view('emails.task-reminder');  // your email view
     }
 }
 
