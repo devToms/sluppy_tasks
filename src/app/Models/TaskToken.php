@@ -14,7 +14,7 @@ class TaskToken extends Model
     protected $dates = ['expires_at'];
 
     /**
-     * Sprawdzanie, czy token jest jeszcze ważny
+     * Checking if the token is still valid
      */
     public function isValid()
     {
