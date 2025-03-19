@@ -64,10 +64,10 @@ use Carbon\Carbon;
                                         <div class="mb-4">
                                             <label for="due_date" class="block text-gray-700 text-sm font-bold mb-2">Due Date:</label>
                                             <input type="datetime-local" 
-    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-    id="due_date" 
-    wire:model="due_date" 
-    value="{{ \Carbon\Carbon::parse($due_date)->format('Y-m-d\TH:i') }}">
+                                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                                    id="due_date" 
+                                                    wire:model="due_date" 
+                                                    value="{{ \Carbon\Carbon::parse($due_date)->format('Y-m-d\TH:i') }}">
 
                                         </div>
                                     </div>
