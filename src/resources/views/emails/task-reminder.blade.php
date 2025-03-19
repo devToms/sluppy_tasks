@@ -8,7 +8,10 @@
         <p>This is a reminder for the following task:</p>
         <div class="bg-white rounded-lg shadow p-6 mb-4">
             <p><strong>Task Name:</strong> {{ $task->name }}</p>
-            <p><strong>Deadline:</strong> {{ $task->deadline }}</p>
+            <p><strong>Description:</strong> {{ $task->description }}</p>
+            <p><strong>Priority:</strong> {{ $task->priority }}</p>
+            <p><strong>Status:</strong> {{ $task->status }}</p>
+            <p><strong>Due Date:</strong> {{ $task->due_date }}</p>
         </div>
         <p>Please make sure to complete it before the deadline.</p>
         <p>Thank you!</p>
